@@ -29,11 +29,8 @@ const NoteCard = ({ item, setCurrentPage, deleteNote, setCurrentNoteId }) => (
 // Komponen utama untuk menampilkan halaman beranda
 const Home = ({ noteList, setCurrentPage, deleteNote, setCurrentNoteId }) => (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>NoteApp</Text>
-      </View>
       <CustomButton
-        backgroundColor="#006FFD"
+        backgroundColor="#915DD2"
         color="#fff"
         text="Tambahkan Note"
         width="100%"
@@ -60,29 +57,17 @@ const Home = ({ noteList, setCurrentPage, deleteNote, setCurrentNoteId }) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
-    paddingHorizontal: 20,
-  },
-  header: {
-    top: Platform.OS === 'ios' ? 0 : 24,
-    paddingBottom: 20,
-  },
-  headerText: {
-    fontSize: 24,
-    fontWeight: '700',
-    textAlign: 'center',
-    color: '#203239',
+    backgroundColor: '#fff',
+    marginHorizontal: 20,
+    paddingTop: Platform.OS === 'android' ? 40 : 0 // Menyesuaikan padding untuk SafeArea pada Android
   },
   card: {
     backgroundColor: '#fff',
-    padding: 15,
+    padding: 16,
     marginVertical: 10,
     borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
+    borderColor: '#eee',
+    borderWidth: 1,
   },
   cardTitle: {
     fontWeight: '700',
@@ -97,10 +82,10 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 15,
+    marginTop: 16,
   },
   editText: {
-    color: '#006FFD',
+    color: '#E99A00',
     fontWeight: '500',
   },
   deleteText: {

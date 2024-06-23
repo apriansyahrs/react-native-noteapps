@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, Platform, SafeAreaView } from 'react-native';
+import { View, StyleSheet, Platform, SafeAreaView } from 'react-native';
 import CustomButton from '../components/customButton';
 import CustomTextInput from '../components/customTextInput';
 
@@ -11,9 +11,6 @@ const AddNote = ({ setCurrentPage, addNote }) => {
   return (
     // SafeAreaView digunakan untuk menghindari area yang tidak dapat digunakan pada perangkat tertentu (seperti notch pada iPhone)
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Tambahkan Note</Text>
-      </View>
       <CustomTextInput
         text={title}
         onChange={setTitle}
@@ -32,7 +29,7 @@ const AddNote = ({ setCurrentPage, addNote }) => {
       />
       <View style={styles.spacerTop}>
         <CustomButton
-          backgroundColor="#006FFD"
+          backgroundColor="#915DD2"
           color="#fff"
           text="Simpan"
           width="100%"
@@ -58,21 +55,12 @@ const AddNote = ({ setCurrentPage, addNote }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
-    paddingHorizontal: 20,
-    paddingTop: Platform.OS === 'android' ? 24 : 0 // Menyesuaikan padding untuk SafeArea pada Android
-  },
-  header: {
-    paddingBottom: 20,
-  },
-  headerText: {
-    fontSize: 24,
-    fontWeight: '700',
-    textAlign: 'center',
-    color: '#203239',
+    backgroundColor: '#fff',
+    marginHorizontal: 20,
+    paddingTop: Platform.OS === 'android' ? 40 : 0 // Menyesuaikan padding untuk SafeArea pada Android
   },
   spacerTop: {
-    marginTop: 20,
+    marginTop: 16,
   },
 });
 
